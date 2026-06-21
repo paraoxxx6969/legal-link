@@ -74,24 +74,7 @@ export default function LoginPage({ onAuthenticated }: LoginPageProps) {
   };
 
   return (
-    <div className="relative min-h-screen text-white antialiased overflow-hidden flex flex-col items-center justify-center px-4 py-10">
-      {/* Animated background photograph */}
-      <div className="absolute inset-0 -z-20 overflow-hidden">
-        <div
-          className="login-bg-photo absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/login-bg.png')" }}
-        />
-      </div>
-
-      {/* Dark vignette + brand-color glows over the photo, for legibility */}
-      <div
-        className="absolute inset-0 -z-10"
-        style={{
-          background:
-            'radial-gradient(circle at 78% 12%, rgba(79,70,229,0.22) 0%, transparent 55%), radial-gradient(circle at 12% 85%, rgba(139,92,246,0.16) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(2,2,5,0.45) 0%, rgba(2,2,5,0.86) 100%)',
-        }}
-      />
-
+    <div className="relative min-h-screen text-white antialiased flex flex-col items-center justify-center px-4 py-10">
       <div className="relative z-10 w-full max-w-[440px]">
         {/* Brand */}
         <motion.div
