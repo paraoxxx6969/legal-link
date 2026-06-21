@@ -1,0 +1,6 @@
+{
+  "name": "LegalLink",
+  "description": "Secure client portal for finding legal experts, managing medical/case documents, and scheduling consultation sessions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
