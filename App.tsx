@@ -285,11 +285,8 @@ export default function App({ role = 'client', onLogout }: AppProps) {
   }, [documents, docSearchQuery]);
 
   return (
-    <div className="bg-[#050508] min-h-screen pb-28 text-white antialiased relative overflow-x-hidden">
-      <div className="atmosphere" />
-
-      {/* HEADER SECTION */}
-      <header className="sticky top-0 bg-[#050508]/40 backdrop-blur-2xl border-b border-white/10 z-50 flex justify-between items-center px-4 md:px-8 h-20">
+    <div className="min-h-screen pb-28 text-white antialiased relative overflow-x-hidden">
+      <header className="sticky top-0 bg-white/[0.04] backdrop-blur-2xl border-b border-white/10 z-50 flex justify-between items-center px-4 md:px-8 h-20">
         <div 
           onClick={() => { setActiveTab('home'); setIsSchedulerActive(false); }} 
           className="flex items-center gap-3 cursor-pointer select-none active:opacity-80"
@@ -342,7 +339,7 @@ export default function App({ role = 'client', onLogout }: AppProps) {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 10 }}
-                className="absolute right-0 top-14 w-80 bg-[#09090e]/95 backdrop-blur-2xl border border-white/15 rounded-2xl shadow-2xl p-3 z-50"
+                className="absolute right-0 top-14 w-80 bg-white/[0.06] backdrop-blur-2xl border border-white/15 rounded-2xl shadow-2xl p-3 z-50"
                 id="notifications-box"
               >
                 <div className="p-2 border-b border-white/10 flex justify-between items-center">
@@ -666,7 +663,7 @@ export default function App({ role = 'client', onLogout }: AppProps) {
                     <SlidersHorizontal className="w-4 h-4 text-white/50" />
                   </div>
                   {showExprDropdown && (
-                    <div className="absolute top-14 left-0 w-full bg-[#09090e]/95 backdrop-blur-2xl border border-white/15 rounded-xl shadow-2xl p-2 z-30 space-y-1">
+                    <div className="absolute top-14 left-0 w-full bg-white/[0.06] backdrop-blur-2xl border border-white/15 rounded-xl shadow-2xl p-2 z-30 space-y-1">
                       {['Any Level', '5+ Years', '10+ Years', '15+ Years'].map(lvl => (
                         <div 
                           key={lvl} 
@@ -694,7 +691,7 @@ export default function App({ role = 'client', onLogout }: AppProps) {
                     <MapPin className="w-4 h-4 text-white/50" />
                   </div>
                   {showLocationDropdown && (
-                    <div className="absolute top-14 left-0 w-full bg-[#09090e]/95 backdrop-blur-2xl border border-white/15 rounded-xl shadow-2xl p-2 z-30 space-y-1">
+                    <div className="absolute top-14 left-0 w-full bg-white/[0.06] backdrop-blur-2xl border border-white/15 rounded-xl shadow-2xl p-2 z-30 space-y-1">
                       {['San Francisco, CA', 'Los Angeles, CA', 'San Jose, CA', 'Remote / Nationwide'].map(loc => (
                         <div 
                           key={loc} 
@@ -715,7 +712,7 @@ export default function App({ role = 'client', onLogout }: AppProps) {
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: '240px', opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
-                  className="w-full bg-[#0c0c14]/40 backdrop-blur-xl rounded-2xl relative overflow-hidden flex flex-col justify-between p-4 border border-white/10 shadow-inner"
+                  className="w-full bg-white/[0.04] backdrop-blur-xl rounded-2xl relative overflow-hidden flex flex-col justify-between p-4 border border-white/10 shadow-inner"
                   id="interactive-map-holder"
                 >
                   {/* Grid Lines resembling blueprint coordinates */}
@@ -1005,7 +1002,7 @@ export default function App({ role = 'client', onLogout }: AppProps) {
                       </div>
 
                       {/* Share toggle bars as in design #3 */}
-                      <div className="pt-3 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 bg-[#09090e]/55 p-3 rounded-xl border border-white/5">
+                      <div className="pt-3 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 bg-white/[0.04] p-3 rounded-xl border border-white/5">
                         <div className="flex items-center gap-2">
                           {doc.sharedWith.length > 0 ? (
                             <div className="flex items-center gap-1.5" id={`shared-status-${doc.id}`}>
@@ -1133,7 +1130,7 @@ export default function App({ role = 'client', onLogout }: AppProps) {
 
                         <div className="space-y-4">
                           {currentAttorney.cases.map((cs, idx) => (
-                            <div key={idx} className="p-4 bg-[#0c0c14]/40 rounded-xl border border-white/5 hover:bg-white/5 transition-colors text-white">
+                            <div key={idx} className="p-4 bg-white/[0.04] rounded-xl border border-white/5 hover:bg-white/5 transition-colors text-white">
                               <div className="flex justify-between items-center mb-2">
                                 <h4 className="font-bold text-sm text-white tracking-tight">{cs.title}</h4>
                                 <span className={`px-2.5 py-0.5 rounded text-[8px] font-black uppercase tracking-widest ${
@@ -1157,7 +1154,7 @@ export default function App({ role = 'client', onLogout }: AppProps) {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           {currentAttorney.endorsements.map((en, idx) => (
-                            <div key={idx} className="p-4 bg-[#0c0c14]/40 rounded-xl border border-white/5 flex flex-col justify-between text-white">
+                            <div key={idx} className="p-4 bg-white/[0.04] rounded-xl border border-white/5 flex flex-col justify-between text-white">
                               <div className="flex gap-0.5 mb-2">
                                 {Array.from({ length: 5 }).map((_, i) => (
                                   <Star key={i} className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
@@ -1389,7 +1386,7 @@ export default function App({ role = 'client', onLogout }: AppProps) {
       </main>
 
       {/* FOOTER PERSISTENT BOTTOM NAVIGATION BAR WITH ACTIVE HIGHLIGHTS */}
-      <nav className="fixed bottom-0 left-0 w-full flex justify-around items-center h-16 bg-[#050508]/60 backdrop-blur-3xl border-t border-white/10 z-50 shadow-2xl">
+      <nav className="fixed bottom-0 left-0 w-full flex justify-around items-center h-16 bg-white/[0.05] backdrop-blur-3xl border-t border-white/10 z-50 shadow-2xl">
         {/* TAB 1 ICON LINK */}
         <button 
           onClick={() => { setActiveTab('home'); setIsSchedulerActive(false); }} 
@@ -1447,7 +1444,7 @@ export default function App({ role = 'client', onLogout }: AppProps) {
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
-              className="bg-[#0c0c14]/95 backdrop-blur-3xl border border-white/15 rounded-3xl max-w-sm w-full p-6 space-y-4 shadow-2xl text-white"
+              className="bg-white/[0.07] backdrop-blur-3xl border border-white/15 rounded-3xl max-w-sm w-full p-6 space-y-4 shadow-2xl text-white"
               id="new-folder-dialog"
             >
               <div className="flex justify-between items-center">
@@ -1499,7 +1496,7 @@ export default function App({ role = 'client', onLogout }: AppProps) {
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
-              className="bg-[#0c0c14]/95 backdrop-blur-3xl border border-white/15 rounded-3xl max-w-md w-full p-6 space-y-4 shadow-2xl text-white"
+              className="bg-white/[0.07] backdrop-blur-3xl border border-white/15 rounded-3xl max-w-md w-full p-6 space-y-4 shadow-2xl text-white"
               id="upload-file-dialog"
             >
               <div className="flex justify-between items-center">
